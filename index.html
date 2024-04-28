@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
+</head>
+
+<body>
+    <div class="top_bar">
+        <p class="title">Pizza</p>
+        <ul>
+            <li>menu</li>
+            <li>new in</li>
+            <li>about us</li>
+            <li>crew</li>
+        </ul>
+        <div class="order">
+            <p>order online</p>
+        </div>
+    </div>
+
+    <div class="left">
+        <div class="dis">
+            <pre style="color: #ffffff82;"><span style="color: white;">1  </span>2  3</pre>
+            <h1>choose your Pizza</h1>
+
+            <button class="btn_next" onclick="sent_type()">next</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <form action="">
+            <div class="card">
+                <img id="img_1" src="images/meet.png">
+                <h2>Meet</h2>
+                <p>a meet pizza that is so good</p>
+                <input type="radio" id="Meet" name="type" value="Meet">
+            </div>
+            <div class="card">
+                <img id="img_2" src="images/margherita.png">
+                <h2>Margherita</h2>
+                <p>best margherita pizza you ever try</p>
+                <input type="radio" id="margherita" name="type" value="margherita">
+            </div>
+            <div class="card">
+                <img id="img_3" src="images/pepperoni.png">
+                <h2>pepperoni pizza</h2>
+                <p>pepperoni pizza that is so good</p>
+                <input type="radio" id="pepperoni" name="type" value="pepperoni">
+            </div>
+            <div class="card">
+                <img class="img_1" id="img_1" src="images/vegetarian.png">
+                <h2>Vegetarian</h2>
+                <p>a pizza with some vegetarian flavor</p>
+                <input type="radio" id="vegetarian" name="type" value="vegetarian">
+            </div>
+        </form>
+    </div>
+    <script>
+        function sent_type() {
+            let type;
+            if (document.getElementById("Meet").checked) {
+                type = localStorage.setItem("choice", "meet");
+            } else if (document.getElementById("margherita").checked) {
+                type = localStorage.setItem("choice", "margherita");
+            } else if (document.getElementById("pepperoni").checked) {
+                type = localStorage.setItem("choice", "pepperoni");
+            } else if (document.getElementById("vegetarian").checked) {
+                type = localStorage.setItem("choice", "vegetarian");
+            } else {
+                alert("select a type");
+                return;
+            }
+            window.location.href = 'step_2.html';
+        }
+    </script>
+</body>
+
+</html>
