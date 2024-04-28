@@ -1,0 +1,60 @@
+<!DOCTYPE htbtn_backml>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="step_3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
+</head>
+
+<body>
+    <div class="top_bar">
+        <p class="title">Pizza</p>
+        <ul>
+            <li>menu</li>
+            <li>new in</li>
+            <li>about us</li>
+            <li>crew</li>
+        </ul>
+        <div class="order">
+            <p>order online</p>
+        </div>
+    </div>
+
+    <div class="left">
+        <div class="dis">
+            <pre style="color: #ffffff82;">1  2  <span style="color: white;">3</span></pre>
+            <h1>Is your order correct?</h1>
+
+            <button class="btn_back" onclick="back()">back</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <img src="" id="img_1">
+        <div class="card">
+            <h3>your order</h3>
+            <p id="paragraph"></p>
+            <button>confirm</button>
+        </div>
+    </div>
+    <script>
+        let c = localStorage.getItem("choice");
+        var img = document.getElementById('img_1');
+        img.src = "images/" + c + ".png";
+
+        let p = localStorage.getItem("size");
+        var par = document.getElementById('paragraph');
+        par.textContent = "pizza " + c + " with " + p + " size";
+
+        function back() {
+            window.location.href = 'step_2.html';
+        }
+    </script>
+</body>
+
+</html>

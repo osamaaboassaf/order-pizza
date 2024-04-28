@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="step_2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title></title>
+</head>
+
+<body>
+	<div class="top_bar">
+		<p class="title">Pizza</p>
+		<ul>
+			<li>menu</li>
+			<li>new in</li>
+			<li>about us</li>
+			<li>crew</li>
+		</ul>
+		<div class="order">
+			<p>order online</p>
+		</div>
+	</div>
+
+	<div class="left">
+		<div class="dis">
+			<pre style="color: #ffffff82;">1  <span style="color: white;">2</span>  3</pre>
+			<h1>choose your size</h1>
+			<div class="control_img">
+				<label id="small">small</label>
+				<button onclick="up_img()" class="up" id="up"><i class="fa fa-angle-up"></i></button>
+				<label id="medium" style="color: white;">medium</label>
+				<button onclick="down_img()" class="down" id="down"><i class="fa fa-angle-down"></i></button>
+				<label id="large">large</label>
+			</div>
+			<div style="display: flex;gap: 1rem;">
+				<button class="btn_back" onclick="back()">back</button>
+				<button class="btn_next" onclick="next()">next</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="images" id="images">
+		<img class="img_1" id="img_1" src="">
+		<img class="img_2" id="img_2" src="">
+		<img class="img_3" id="img_3" src="">
+	</div>
+
+	<script>
+		let c = localStorage.getItem("choice");
+		var img = document.getElementById('img_1');
+		img.src = "images/" + c + ".png";
+		var img = document.getElementById('img_2');
+		img.src = "images/" + c + ".png";
+		var img = document.getElementById('img_3');
+		img.src = "images/" + c + ".png";
+	</script>
+
+	<script>
+
+	</script>
+
+	<script>
+		let rotationAngle = 0;
+		let cont_up = 0;
+		let cont_down = 0;
+
+		var images = document.getElementById("images");
+		var img_1 = document.getElementById("img_1");
+		var img_2 = document.getElementById("img_2");
+		var img_3 = document.getElementById("img_3");
+
+		var small = document.getElementById("small");
+		var medium = document.getElementById("medium");
+		var large = document.getElementById("large");
+
+		function up_img() {
+			if (cont_up >= 1) {
+				return;
+			} else {
+				rotationAngle += 30;
+				cont_up += 1;
+				cont_down -= 1;
+				images.style.transition = `transform 2s`;
+				images.style.transform = `rotate(${rotationAngle}deg)`;
+
+				if (cont_up === 0) {
+					img_3.style.width = `20rem`;
+					img_3.style.height = `20rem`;
+
+					img_2.style.width = `20rem`;
+					img_2.style.height = `20rem`;
+
+					medium.style.color = "white";
+					large.style.color = "#ffffff82";
+					localStorage.setItem("size", "medium");
+				}
+				if (cont_up === 1) {
+					img_1.style.width = `15rem`;
+					img_1.style.height = `15rem`;
+
+					img_2.style.width = `25rem`;
+					img_2.style.height = `25rem`;
+
+					small.style.color = "white";
+					medium.style.color = "#ffffff82";
+					localStorage.setItem("size", "small");
+				}
+			}
+		}
+
+
+		function down_img() {
+			if (cont_down >= 1) {
+				return;
+			} else {
+				cont_up -= 1;
+				cont_down += 1;
+				rotationAngle -= 30;
+				images.style.transition = `transform 2s`;
+				images.style.transform = `rotate(${rotationAngle}deg)`;
+				if (cont_down === 0) {
+					img_1.style.width = `20rem`;
+					img_1.style.height = `20rem`;
+
+					img_2.style.width = `20rem`;
+					img_2.style.height = `20rem`;
+
+					small.style.color = "#ffffff82";
+					medium.style.color = "white";
+					localStorage.setItem("size", "medium");
+				}
+				if (cont_down === 1) {
+					img_2.style.width = `22rem`;
+					img_2.style.height = `22rem`;
+
+					img_3.style.width = `25rem`;
+					img_3.style.height = `25rem`;
+
+					large.style.color = "white";
+					medium.style.color = "#ffffff82";
+					localStorage.setItem("size", "large");
+				}
+
+			}
+		}
+
+		function back() {
+			window.location.href = 'order.html';
+		}
+
+		function next() {
+			if (cont_up === 0) {
+				localStorage.setItem("size", "medium");
+			}
+			window.location.href = 'step_3.html';
+		}
+	</script>
+</body>
+
+</html>
