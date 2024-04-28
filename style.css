@@ -1,0 +1,116 @@
+body {
+    background-color: #D8A7A3;
+    width: 100%;
+    height: 100svh;
+    margin: auto;
+    padding: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.top_bar {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 51;
+    color: white;
+    text-decoration: none;
+}
+
+.title {
+    width: 10%;
+    font-size: 1rem;
+    margin: 0px;
+    font-family: emoji;
+    padding-left: 1rem;
+}
+
+ul {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 15rem 0 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 1rem;
+}
+
+.order {
+    width: 10%;
+}
+
+.left {
+    background-color: #7CA982;
+    width: 40%;
+    height: 100svh;
+    border-radius: 0% 64% 64% 0% / 0% 90% 90% 0%;
+}
+
+.dis {
+    margin: auto;
+    width: 10rem;
+    height: 20rem;
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.dis h1 {
+    margin: 0;
+    color: white;
+}
+
+.btn_next {
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: #78CBBF;
+}
+
+.right {
+    width: 60rem;
+    height: 30rem;
+    position: absolute;
+    top: 18%;
+    right: 0%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.right::-webkit-scrollbar {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    width: 20rem;
+    min-width: 20rem;
+    height: 26rem;
+    background: #efded77a;
+    border-radius: 150px;
+    margin-right: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+    white-space-collapse: preserve-breaks;
+}
+
+.card img {
+    width: 10rem;
+    height: 10rem;
+}
