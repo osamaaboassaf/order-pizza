@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
 
-    <title></title>
+    <title>Pizza Order</title>
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+
 </head>
 
 <body>
@@ -37,27 +40,29 @@
     <div class="right">
         <form action="">
             <div class="card">
-                <img id="img_1" src="images/meet.png">
-                <h2>Meet</h2>
-                <p>a meet pizza that is so good</p>
-                <input type="radio" id="Meet" name="type" value="Meet">
+                <img id="img_1" src="images/meat.png">
+                <h2>Meat</h2>
+                <p>melted cheese, pepperoni cups, Italian sausage, and bacon</p>
+                <input type="radio" id="Meat" name="type" value="Meat">
             </div>
             <div class="card">
                 <img id="img_2" src="images/margherita.png">
                 <h2>Margherita</h2>
-                <p>best margherita pizza you ever try</p>
+                <p>peeled tomatoes, mozzarella, fresh basil leaves,
+                    and extra virgin olive oil.</p>
                 <input type="radio" id="margherita" name="type" value="margherita">
             </div>
             <div class="card">
                 <img id="img_3" src="images/pepperoni.png">
                 <h2>pepperoni pizza</h2>
-                <p>pepperoni pizza that is so good</p>
+                <p>sauce 18 to 20 slices pepperoni mozzarella, pepper, fresh oregano</p>
                 <input type="radio" id="pepperoni" name="type" value="pepperoni">
             </div>
             <div class="card">
                 <img class="img_1" id="img_1" src="images/vegetarian.png">
                 <h2>Vegetarian</h2>
-                <p>a pizza with some vegetarian flavor</p>
+                <p>featuring cherry tomatoes, artichoke, bell pepper,
+                    olives, red onion and some hidden baby spinach</p>
                 <input type="radio" id="vegetarian" name="type" value="vegetarian">
             </div>
         </form>
@@ -65,8 +70,8 @@
     <script>
         function sent_type() {
             let type;
-            if (document.getElementById("Meet").checked) {
-                type = localStorage.setItem("choice", "meet");
+            if (document.getElementById("Meat").checked) {
+                type = localStorage.setItem("choice", "meat");
             } else if (document.getElementById("margherita").checked) {
                 type = localStorage.setItem("choice", "margherita");
             } else if (document.getElementById("pepperoni").checked) {

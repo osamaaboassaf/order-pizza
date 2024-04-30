@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #D8A7A3;
     width: 100%;
@@ -17,6 +22,7 @@ body {
     z-index: 51;
     color: white;
     text-decoration: none;
+    font-family: 'Oswald', sans-serif;
 }
 
 .title {
@@ -62,6 +68,7 @@ ul li {
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    font-family: 'Rubik', sans-serif;
 }
 
 .dis h1 {
@@ -77,8 +84,12 @@ ul li {
     background: #78CBBF;
 }
 
+button:hover {
+    transform: scale(1.05);
+}
+
 .right {
-    width: 60rem;
+    width: 70%;
     height: 30rem;
     position: absolute;
     top: 18%;
@@ -100,17 +111,99 @@ form {
 
 .card {
     width: 20rem;
-    min-width: 20rem;
     height: 26rem;
     background: #efded77a;
     border-radius: 150px;
     margin-right: 2rem;
     text-align: center;
     padding-top: 2rem;
-    white-space-collapse: preserve-breaks;
+    box-shadow: 0.2rem 0.2rem 0.2rem #00000027;
 }
 
 .card img {
     width: 10rem;
     height: 10rem;
+    transition: transform 1s;
+}
+
+.card h2 {
+    transition: transform 1s;
+    margin-bottom: 2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.card p {
+    height: 6rem;
+    padding-top: 1rem;
+    margin: 0;
+    font-family: cursive;
+    font-family: 'Rubik', sans-serif;
+}
+
+.card:hover {
+    background: #efded7;
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+.card:hover h2 {
+    transform: translate(0%, 80%);
+}
+
+@media (max-width:700px) {
+    .top_bar {
+        display: none;
+    }
+
+    .left {
+        width: 40%;
+    }
+
+    .right {
+        width: 60%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .left {
+        width: 15rem;
+        height: 40%;
+    }
+
+    .dis {
+        width: 10rem;
+        height: 10rem;
+        top: 0%;
+        left: 0%;
+        padding: 2rem;
+    }
+
+    .right {
+        width: 100%;
+        height: 70%;
+        top: 40%;
+        position: absolute;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        overflow: scroll;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 20rem;
+        min-height: 26rem;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 }

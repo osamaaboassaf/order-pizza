@@ -1,5 +1,4 @@
 body {
-    /*#E2C2B7  #DBAEA9*/
     background-color: #D8A7A3;
     width: 100%;
     height: 100svh;
@@ -18,6 +17,7 @@ body {
     z-index: 51;
     color: white;
     text-decoration: none;
+    font-family: 'Oswald', sans-serif;
 }
 
 .title {
@@ -50,6 +50,14 @@ ul li {
     width: 40%;
     height: 100svh;
     border-radius: 0% 64% 64% 0% / 0% 90% 90% 0%;
+}
+
+.left h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.left label {
+    font-family: 'Rubik', sans-serif;
 }
 
 .dis {
@@ -155,4 +163,89 @@ ul li {
     top: 65%;
     right: -4%;
     transition: width 2s, height 2s;
+}
+
+.img_11 {
+    display: none;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width:1000px) {
+    .images {
+        rotate: -10deg;
+    }
+
+    .left {
+        width: 35%;
+    }
+
+    .right {
+        width: 65%;
+    }
+}
+
+@media (max-width:700px) {
+    .top_bar {
+        display: none;
+    }
+
+    .dis {
+        margin: auto;
+        width: 10rem;
+        height: 20rem;
+        top: 20%;
+        left: 2%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .left {
+        width: 15rem;
+        height: 40%;
+    }
+
+    .dis {
+        width: 14rem;
+        height: 13rem;
+        top: 0%;
+        left: 2%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .btn_left {
+        width: 10rem;
+    }
+
+    .images {
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        border-radius: none;
+        top: 40%;
+        right: 0%;
+        rotate: 0deg;
+        align-content: center;
+        text-align: -webkit-center;
+    }
+
+    .img_1,
+    .img_2,
+    .img_3 {
+        display: none;
+    }
+
+    .img_11 {
+        display: block;
+        width: 14rem;
+        height: 14rem;
+        transition: width 2s, height 2s;
+    }
 }

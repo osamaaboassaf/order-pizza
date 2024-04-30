@@ -8,7 +8,11 @@
 	<link rel="stylesheet" href="step_2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+
+	<title>Pizza Order</title>
+	<link rel="icon" type="image/x-icon" href="logo.png" />
 </head>
 
 <body>
@@ -36,7 +40,7 @@
 				<button onclick="down_img()" class="down" id="down"><i class="fa fa-angle-down"></i></button>
 				<label id="large">large</label>
 			</div>
-			<div style="display: flex;gap: 1rem;">
+			<div class="btn_left" style="display: flex;gap: 1rem;">
 				<button class="btn_back" onclick="back()">back</button>
 				<button class="btn_next" onclick="next()">next</button>
 			</div>
@@ -47,16 +51,20 @@
 		<img class="img_1" id="img_1" src="">
 		<img class="img_2" id="img_2" src="">
 		<img class="img_3" id="img_3" src="">
+
+		<img class="img_11" id="img_11" src="">
 	</div>
 
 	<script>
 		let c = localStorage.getItem("choice");
-		var img = document.getElementById('img_1');
-		img.src = "images/" + c + ".png";
-		var img = document.getElementById('img_2');
-		img.src = "images/" + c + ".png";
-		var img = document.getElementById('img_3');
-		img.src = "images/" + c + ".png";
+		var img_1 = document.getElementById('img_1');
+		img_1.src = "images/" + c + ".png";
+		var img_2 = document.getElementById('img_2');
+		img_2.src = "images/" + c + ".png";
+		var img_3 = document.getElementById('img_3');
+		img_3.src = "images/" + c + ".png";
+		var img_11 = document.getElementById('img_11');
+		img_11.src = "images/" + c + ".png";
 	</script>
 
 	<script>
@@ -76,6 +84,8 @@
 		var small = document.getElementById("small");
 		var medium = document.getElementById("medium");
 		var large = document.getElementById("large");
+
+		var mobile_img = document.getElementById("img_11");
 
 		function up_img() {
 			if (cont_up >= 1) {
@@ -97,6 +107,9 @@
 					medium.style.color = "white";
 					large.style.color = "#ffffff82";
 					localStorage.setItem("size", "medium");
+
+					mobile_img.style.width = `14rem`;
+					mobile_img.style.height = `14rem`;
 				}
 				if (cont_up === 1) {
 					img_1.style.width = `15rem`;
@@ -108,6 +121,9 @@
 					small.style.color = "white";
 					medium.style.color = "#ffffff82";
 					localStorage.setItem("size", "small");
+
+					mobile_img.style.width = `12rem`;
+					mobile_img.style.height = `12rem`;
 				}
 			}
 		}
@@ -132,6 +148,9 @@
 					small.style.color = "#ffffff82";
 					medium.style.color = "white";
 					localStorage.setItem("size", "medium");
+
+					mobile_img.style.width = `14rem`;
+					mobile_img.style.height = `14rem`;
 				}
 				if (cont_down === 1) {
 					img_2.style.width = `22rem`;
@@ -143,6 +162,9 @@
 					large.style.color = "white";
 					medium.style.color = "#ffffff82";
 					localStorage.setItem("size", "large");
+
+					mobile_img.style.width = `16rem`;
+					mobile_img.style.height = `16rem`;
 				}
 
 			}
